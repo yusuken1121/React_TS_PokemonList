@@ -1,15 +1,12 @@
 import { FC, ReactNode } from "react";
 type ButtonType = {
   children: ReactNode;
-  onClickInsertPokemon: () => void;
+  onClickFunc: () => void;
 };
 
-export const PrimaryButton: FC<ButtonType> = ({
-  children,
-  onClickInsertPokemon,
-}) => {
+export const PrimaryButton: FC<ButtonType> = ({ children, onClickFunc }) => {
   return (
-    <button onClick={onClickInsertPokemon} className="button-base">
+    <button onClick={onClickFunc} className="button-base">
       {children}
     </button>
   );
