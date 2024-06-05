@@ -21,6 +21,7 @@ function App() {
           return (
             <PokemonCard
               key={pokemon.id}
+              id={pokemon.id}
               pokeName={pokemon.pokeName}
               image={pokemon.image}
             />
