@@ -1,9 +1,10 @@
-import { Dispatch, FC, createContext, useState } from "react";
+import { FC, createContext, useState } from "react";
 import { ChildrenType } from "../types/childrenType";
 import { PokemonInfoType } from "../types/pokemonType";
+import { SetPokemonsType } from "../types/setPokemonsType";
 interface pokemonContext {
   pokemons: (PokemonInfoType | null)[];
-  setPokemons: Dispatch<React.SetStateAction<(PokemonInfoType | null)[]>>;
+  setPokemons: SetPokemonsType;
 }
 const defaultPokemonCtx = {
   pokemons: [],
