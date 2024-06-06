@@ -11,6 +11,7 @@ const defaultPokemonCtx = {
 };
 
 export const GetPokeContext = createContext<pokemonContext>(defaultPokemonCtx);
+
 export const GetPokeProvider: FC<ChildrenType> = ({ children }) => {
   const [pokemons, setPokemons] = useState<Array<PokemonInfoType | null>>([]);
   return (

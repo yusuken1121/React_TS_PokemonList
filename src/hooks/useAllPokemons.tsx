@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { PokemonInfoType } from "../types/pokemonType";
+import { GetPokeContext } from "../provider/getPokeContext";
 
 export const useAllPokemons = () => {
+  const { pokemons, setPokemons } = useContext(GetPokeContext);
   const [pokeId, setPokeID] = useState<number>(1);
-  const [pokemons, setPokemons] = useState<Array<PokemonInfoType>>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
   const getPokemons = async () => {
@@ -18,7 +19,6 @@ export const useAllPokemons = () => {
         pokemonPromises.push(res);
       }
       const result = await Promise.all(pokemonPromises);
-      // console.log(result);
       const dataPromises = result.map(async (res) => {
         if (!res.ok) {
           setError(true);
@@ -34,7 +34,9 @@ export const useAllPokemons = () => {
           image: pokemon.sprites.front_default,
         };
       });
-      setPokemons(pokemonsData);
+      console.log("updating pokemons", pokemonsData);
+      setPokemons((prevpokemons) => [...prevpokemons, ...pokemonsData]);
+      console.log("pokemons updated");
       setPokeID(pokeId + 10);
     } catch (error) {
       setError(true);
@@ -42,5 +44,5 @@ export const useAllPokemons = () => {
       setLoading(false);
     }
   };
-  return { pokemons, loading, error, getPokemons };
+  return { loading, error, getPokemons };
 };
