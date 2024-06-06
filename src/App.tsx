@@ -30,6 +30,7 @@ function App() {
                   id={pokemon.id}
                   pokeName={pokemon.pokeName}
                   image={pokemon.image}
+                  quantity={pokemon.quantity ? pokemon.quantity : 0}
                 />
               )
             );
