@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { PokemonInfoType } from "../../../types/pokemonType";
-import { PrimaryButton } from "../../atoms/primaryButton";
+import { PrimaryButton } from "../../atoms/PrimaryButton";
 import { GetPokeContext } from "../../../provider/getPokeContext";
 import { onClickCardFormat } from "./buttonFunc/onClickCardFormat";
 import { incrementQuantity } from "./buttonFunc/updateQuantityFunc";

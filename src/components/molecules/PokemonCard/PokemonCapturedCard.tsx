@@ -1,9 +1,9 @@
 import { FC, useContext } from "react";
 import { PokemonInfoType } from "../../../types/pokemonType";
-import { SecondaryButton } from "../../atoms/secondaryButton";
 import { onClickCardFormat } from "./buttonFunc/onClickCardFormat";
 import { decrementQuantity } from "./buttonFunc/updateQuantityFunc";
 import { GetPokeContext } from "../../../provider/getPokeContext";
+import { SecondaryButton } from "../../atoms/secondaryButton";
 
 export const PokemonCapturedCard: FC<PokemonInfoType> = ({
   image,

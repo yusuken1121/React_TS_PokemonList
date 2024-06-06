@@ -1,5 +1,5 @@
 import "./App.css";
-import { PrimaryButton } from "./components/atoms/primaryButton";
+import { PrimaryButton } from "./components/atoms/PrimaryButton";
 import { PokemonInfoType } from "./types/pokemonType";
 import { PokemonCard } from "./components/molecules/PokemonCard/PokemonCard";
 import { useAllPokemons } from "./hooks/useAllPokemons";
