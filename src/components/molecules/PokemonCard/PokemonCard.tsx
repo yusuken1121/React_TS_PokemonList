@@ -25,7 +25,7 @@ export const PokemonCard: FC<PokemonInfoType> = ({
       <PrimaryButton
         onClickFunc={() => OnClickCaptured(pokemons, setPokemons, id)}
       >
-        Get
+        Capture!
       </PrimaryButton>
     </div>
   );

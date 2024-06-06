@@ -15,11 +15,18 @@ function App() {
       <PrimaryButton onClickFunc={onClickInsertPokemon}>
         Next 10 Pokemons
       </PrimaryButton>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {error ? (
           <p className="text-red-600 text-3xl">failed fetching data</p>
         ) : loading ? (
-          <p>Now loading</p>
+          <div className="w-1/2 h-1/2 flex justify-center items-center p-40">
+            <img
+              className="w-40 h-40 object-cover"
+              src="./src/assets/Loading_Rocket.gif"
+              alt=""
+            />
+            <p className="text-3xl">LOADING......</p>
+          </div>
         ) : (
           pokemons.map((pokemon: PokemonInfoType | null) => {
             return (

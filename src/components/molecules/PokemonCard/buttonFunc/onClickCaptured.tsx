@@ -6,7 +6,6 @@ export const OnClickCaptured = (
   setPokemons: SetPokemonsType,
   id: number | undefined
 ): void => {
-  console.log(pokemons);
   const updatedPokemon = pokemons!
     .filter((poke) => {
       return poke!.id === id;
