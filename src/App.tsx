@@ -1,11 +1,11 @@
 import "./App.css";
-import { PrimaryButton } from "./components/atoms/PrimaryButton";
 import { PokemonInfoType } from "./types/pokemonType";
 import { PokemonCard } from "./components/molecules/PokemonCard/PokemonCard";
 import { useAllPokemons } from "./hooks/useAllPokemons";
 import { GetPokeContext } from "./provider/getPokeContext";
 import { useContext } from "react";
 import { PokemonCapturedCard } from "./components/molecules/PokemonCard/PokemonCapturedCard";
+import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
 
 function App() {
   const { loading, error, getPokemons } = useAllPokemons();
