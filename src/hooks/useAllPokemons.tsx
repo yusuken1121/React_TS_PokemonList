@@ -3,7 +3,7 @@ import { PokemonInfoType } from "../types/pokemonType";
 import { GetPokeContext } from "../provider/getPokeContext";
 
 export const useAllPokemons = () => {
-  const { pokemons, setPokemons } = useContext(GetPokeContext);
+  const { setPokemons } = useContext(GetPokeContext);
   const [pokeId, setPokeID] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<boolean>(false);
@@ -34,9 +34,8 @@ export const useAllPokemons = () => {
           image: pokemon.sprites.front_default,
         };
       });
-      console.log("updating pokemons", pokemonsData);
+
       setPokemons((prevpokemons) => [...prevpokemons, ...pokemonsData]);
-      console.log("pokemons updated");
       setPokeID(pokeId + 10);
     } catch (error) {
       setError(true);

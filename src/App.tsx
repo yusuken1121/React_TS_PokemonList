@@ -3,7 +3,7 @@ import { PrimaryButton } from "./components/atoms/primaryButton";
 import { PokemonInfoType } from "./types/pokemonType";
 import { PokemonCard } from "./components/molecules/PokemonCard";
 import { useAllPokemons } from "./hooks/useAllPokemons";
-import { GetPokeContext, GetPokeProvider } from "./provider/getPokeContext";
+import { GetPokeContext } from "./provider/getPokeContext";
 import { useContext } from "react";
 
 function App() {
