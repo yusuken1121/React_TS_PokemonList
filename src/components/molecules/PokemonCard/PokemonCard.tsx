@@ -8,7 +8,7 @@ import { incrementQuantity } from "./buttonFunc/updateQuantityFunc";
 export const PokemonCard: FC<PokemonInfoType> = ({ image, pokeName, id }) => {
   const { pokemons, setPokemons } = useContext(GetPokeContext);
   return (
-    <div className="relative flex flex-col items-center text-gray-700 bg-white shadow-md w-48 rounded-xl bg-clip-border p-4 m-3">
+    <div className="relative flex flex-col items-center text-gray-700 bg-white shadow-md w-48 rounded-xl bg-clip-border p-4 m-3 max-h-56">
       <div className="w-28 h-28 flex justify-center items-center">
         <img className="w-full" src={image} alt={pokeName} />
       </div>

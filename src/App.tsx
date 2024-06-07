@@ -5,7 +5,7 @@ import { useAllPokemons } from "./hooks/useAllPokemons";
 import { GetPokeContext } from "./provider/getPokeContext";
 import { useContext } from "react";
 import { PokemonCapturedCard } from "./components/molecules/PokemonCard/PokemonCapturedCard";
-import { PrimaryButton } from "./components/atoms/button/PrimaryButton";
+import { Header } from "./components/organisms/Header";
 
 function App() {
   const { loading, error, getPokemons } = useAllPokemons();
@@ -17,43 +17,43 @@ function App() {
     }
   );
   return (
-    <div>
-      <header>
-        <PrimaryButton onClickFunc={onClickInsertPokemon}>
-          Next 10 Pokemons
-        </PrimaryButton>
-      </header>
+    <>
+      <Header onClickFunc={onClickInsertPokemon} />
       <main>
-        <div className="flex">
-          <div className="flex flex-wrap justify-center">
-            {error ? (
-              <p className="text-red-600 text-3xl">failed fetching data</p>
-            ) : loading ? (
-              <div className="w-1/2 h-1/2 flex justify-center items-center p-40">
-                <img
-                  className="w-40 h-40 object-cover"
-                  src="./src/assets/Loading_Rocket.gif"
-                  alt=""
-                />
-                <p className="text-3xl">LOADING......</p>
-              </div>
-            ) : (
-              pokemons.map((pokemon: PokemonInfoType | null) => {
-                return (
-                  pokemon && (
-                    <PokemonCard
-                      key={pokemon.id}
-                      id={pokemon.id}
-                      pokeName={pokemon.pokeName}
-                      image={pokemon.image}
-                      quantity={pokemon.quantity ? pokemon.quantity : 0}
-                    />
-                  )
-                );
-              })
-            )}
+        <div className="flex items-start">
+          <div className="flex flex-col items-start">
+            {pokemons.length > 0 && <h1 className="h1-base">POKEMONS</h1>}
+            <div className="flex flex-wrap justify-center">
+              {error ? (
+                <p className="text-red-600 text-3xl">failed fetching data</p>
+              ) : loading ? (
+                <div className="w-dvw h-dvh flex justify-center items-center">
+                  <img
+                    className="w-40 object-cover"
+                    src="./src/assets/Loading_Rocket.gif"
+                    alt=""
+                  />
+                  <p className="h1-base">LOADING......</p>
+                </div>
+              ) : (
+                pokemons.map((pokemon: PokemonInfoType | null) => {
+                  return (
+                    pokemon && (
+                      <PokemonCard
+                        key={pokemon.id}
+                        id={pokemon.id}
+                        pokeName={pokemon.pokeName}
+                        image={pokemon.image}
+                        quantity={pokemon.quantity ? pokemon.quantity : 0}
+                      />
+                    )
+                  );
+                })
+              )}
+            </div>
           </div>
-          <div>
+          <div className="w-">
+            {pokemons.length > 0 && <h1 className="h1-base">Captured</h1>}
             {capturedPokemons.map((pokemon: PokemonInfoType | null) => {
               return (
                 pokemon && (
@@ -70,7 +70,7 @@ function App() {
           </div>
         </div>
       </main>
-    </div>
+    </>
   );
 }
 

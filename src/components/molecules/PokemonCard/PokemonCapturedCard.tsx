@@ -3,7 +3,7 @@ import { PokemonInfoType } from "../../../types/pokemonType";
 import { onClickCardFormat } from "./buttonFunc/onClickCardFormat";
 import { decrementQuantity } from "./buttonFunc/updateQuantityFunc";
 import { GetPokeContext } from "../../../provider/getPokeContext";
-import { SecondaryButton } from "../../atoms/secondaryButton";
+import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 
 export const PokemonCapturedCard: FC<PokemonInfoType> = ({
   image,
