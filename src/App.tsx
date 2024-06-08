@@ -6,6 +6,7 @@ import { GetPokeContext } from "./provider/getPokeContext";
 import { useContext } from "react";
 import { PokemonCapturedCard } from "./components/molecules/PokemonCard/PokemonCapturedCard";
 import { Header } from "./components/organisms/Header";
+import { PokemonCardModal } from "./components/molecules/modal/PokemonCardModal";
 
 function App() {
   const { loading, error, getPokemons } = useAllPokemons();
@@ -16,10 +17,13 @@ function App() {
       return poke?.quantity;
     }
   );
+
   return (
     <>
       <Header onClickFunc={onClickInsertPokemon} />
       <main>
+        <PokemonCardModal />
+
         <div className="flex items-start">
           <div className="flex flex-col items-start">
             {pokemons.length > 0 && <h1 className="h1-base">POKEMONS</h1>}
@@ -53,7 +57,9 @@ function App() {
             </div>
           </div>
           <div className="w-">
-            {pokemons.length > 0 && <h1 className="h1-base">Captured</h1>}
+            {capturedPokemons.length > 0 && (
+              <h1 className="h1-base">Captured</h1>
+            )}
             {capturedPokemons.map((pokemon: PokemonInfoType | null) => {
               return (
                 pokemon && (

@@ -1,12 +1,17 @@
 import { FC, useContext } from "react";
 import { PokemonInfoType } from "../../../types/pokemonType";
 import { PrimaryButton } from "../../atoms/button/PrimaryButton";
-import { GetPokeContext } from "../../../provider/getPokeContext";
+import {
+  GetPokeContext,
+  PokemonCardModalContext,
+} from "../../../provider/getPokeContext";
 import { onClickCardFormat } from "./buttonFunc/onClickCardFormat";
 import { incrementQuantity } from "./buttonFunc/updateQuantityFunc";
 
 export const PokemonCard: FC<PokemonInfoType> = ({ image, pokeName, id }) => {
   const { pokemons, setPokemons } = useContext(GetPokeContext);
+  const { setShowModal } = useContext(PokemonCardModalContext);
+
   return (
     <div className="relative flex flex-col items-center text-gray-700 bg-white shadow-md w-48 rounded-xl bg-clip-border p-4 m-3 max-h-56">
       <div className="w-28 h-28 flex justify-center items-center">
@@ -23,6 +28,9 @@ export const PokemonCard: FC<PokemonInfoType> = ({ image, pokeName, id }) => {
         }
       >
         Capture!
+      </PrimaryButton>
+      <PrimaryButton onClickFunc={() => setShowModal(true)}>
+        Detail
       </PrimaryButton>
     </div>
   );
