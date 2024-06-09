@@ -32,6 +32,8 @@ export const useAllPokemons = () => {
           id: pokemon.id,
           pokeName: pokemon.name,
           image: pokemon.sprites.front_default,
+          imageGif: pokemon.sprites.other.showdown.front_default,
+          types: pokemon.types,
         };
       });
 

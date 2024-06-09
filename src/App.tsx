@@ -48,6 +48,8 @@ function App() {
                         id={pokemon.id}
                         pokeName={pokemon.pokeName}
                         image={pokemon.image}
+                        imageGif={pokemon.imageGif}
+                        types={pokemon.types}
                         quantity={pokemon.quantity ? pokemon.quantity : 0}
                       />
                     )

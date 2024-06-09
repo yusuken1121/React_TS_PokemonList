@@ -8,9 +8,15 @@ import {
 import { onClickCardFormat } from "./buttonFunc/onClickCardFormat";
 import { incrementQuantity } from "./buttonFunc/updateQuantityFunc";
 
-export const PokemonCard: FC<PokemonInfoType> = ({ image, pokeName, id }) => {
+export const PokemonCard: FC<PokemonInfoType> = ({
+  image,
+  pokeName,
+  id,
+  imageGif,
+  types,
+}) => {
   const { pokemons, setPokemons } = useContext(GetPokeContext);
-  const { setShowModal } = useContext(PokemonCardModalContext);
+  const { setShowModal, setContentModal } = useContext(PokemonCardModalContext);
 
   return (
     <div className="relative flex flex-col items-center text-gray-700 bg-white shadow-md w-48 rounded-xl bg-clip-border p-4 m-3 max-h-96">
@@ -29,7 +35,12 @@ export const PokemonCard: FC<PokemonInfoType> = ({ image, pokeName, id }) => {
       >
         Capture!
       </PrimaryButton>
-      <PrimaryButton onClickFunc={() => setShowModal(true)}>
+      <PrimaryButton
+        onClickFunc={() => {
+          setShowModal(true);
+          setContentModal({ id, pokeName, imageGif, types });
+        }}
+      >
         Detail
       </PrimaryButton>
     </div>
