@@ -22,32 +22,30 @@ export const PokemonCardModal: FC = () => {
                 />
               </div>
               <table className="w-full ">
-                <tr className="tr-base"></tr>
-                <tr className="tr-base">
-                  <th className="th-base">ID:</th>
-                  <td className="td-base">{contentModal!.id}</td>
-                </tr>
-                <tr className="tr-base">
-                  <th className="th-base">Name:</th>
-                  <td className="td-base">{contentModal!.pokeName}</td>
-                </tr>
+                <tbody>
+                  <tr className="tr-base"></tr>
+                  <tr className="tr-base">
+                    <th className="th-base">ID:</th>
+                    <td className="td-base">{contentModal!.id}</td>
+                  </tr>
+                  <tr className="tr-base">
+                    <th className="th-base">Name:</th>
+                    <td className="td-base">{contentModal!.pokeName}</td>
+                  </tr>
 
-                {contentModal && contentModal.types ? (
-                  contentModal.types.map((types: PokemonType) => {
-                    return (
-                      <>
-                        <tr className="tr-base flex">
+                  {contentModal && contentModal.types ? (
+                    contentModal.types.map((types: PokemonType) => {
+                      return (
+                        <tr className="tr-base flex" key={types.slot}>
                           <th className="th-base">Types{types.slot}:</th>
-                          <td className="td-base" key={types.slot}>
-                            {types.type.name}
-                          </td>
+                          <td className="td-base">{types.type.name}</td>
                         </tr>
-                      </>
-                    );
-                  })
-                ) : (
-                  <></>
-                )}
+                      );
+                    })
+                  ) : (
+                    <></>
+                  )}
+                </tbody>
               </table>
             </article>
             <div className="w-40">
