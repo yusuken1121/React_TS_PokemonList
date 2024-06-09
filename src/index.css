@@ -13,7 +13,7 @@
     @apply text-3xl font-mono font-bold;
   }
   .tr-base {
-    @apply text-xl w-full flex items-start justify-center mb-2 bg-slate-50;
+    @apply text-xl w-full flex items-start justify-center mb-2 bg-slate-50 shadow-md shadow-slate-300;
   }
   .th-base {
     @apply text-left w-1/2 pl-2 font-mono;
