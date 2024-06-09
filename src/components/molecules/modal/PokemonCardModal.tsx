@@ -11,9 +11,6 @@ export const PokemonCardModal: FC<PokemonCardModalType> = () => {
   const { showModal, setShowModal, contentModal } = useContext(
     PokemonCardModalContext
   );
-  if (contentModal) {
-    console.log(contentModal!.types);
-  }
 
   return (
     <>
@@ -28,7 +25,7 @@ export const PokemonCardModal: FC<PokemonCardModalType> = () => {
                   alt=""
                 />
               </div>
-              <table className="w-full border-dashed border-black border-2">
+              <table className="w-full ">
                 <tr className="tr-base"></tr>
                 <tr className="tr-base">
                   <th className="th-base">ID:</th>

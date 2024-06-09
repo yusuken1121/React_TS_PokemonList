@@ -6,7 +6,7 @@ type ButtonType = {
 
 export const PrimaryButton: FC<ButtonType> = ({ children, onClickFunc }) => {
   return (
-    <button onClick={onClickFunc} className="button-base">
+    <button onClick={onClickFunc} className="button-base-blue">
       {children}
     </button>
   );

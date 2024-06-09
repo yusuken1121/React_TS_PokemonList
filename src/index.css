@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 @layer components {
-  .button-base {
-    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-3 rounded max-w-52 min-w-28;
+  .button-base-blue {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-3 rounded max-w-52 min-w-28 shadow-md shadow-slate-400;
   }
   .button-base-red {
-    @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded;
+    @apply bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow-md shadow-slate-400;
   }
   .h1-base {
     @apply text-3xl font-mono font-bold;
   }
   .tr-base {
-    @apply text-xl w-full flex items-start justify-center mb-2;
+    @apply text-xl w-full flex items-start justify-center mb-2 bg-slate-50;
   }
   .th-base {
-    @apply text-left w-1/2 pl-2;
+    @apply text-left w-1/2 pl-2 font-mono;
   }
   .td-base {
-    @apply text-left w-1/2;
+    @apply text-left w-1/2 font-mono;
   }
 }
