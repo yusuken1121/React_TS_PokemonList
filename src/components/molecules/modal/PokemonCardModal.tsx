@@ -3,11 +3,7 @@ import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 import { PokemonCardModalContext } from "../../../provider/getPokeContext";
 import { PokemonType } from "../../../types/pokemonType";
 
-export type PokemonCardModalType = {
-  showModal: boolean;
-  onClose: () => void;
-};
-export const PokemonCardModal: FC<PokemonCardModalType> = () => {
+export const PokemonCardModal: FC = () => {
   const { showModal, setShowModal, contentModal } = useContext(
     PokemonCardModalContext
   );
